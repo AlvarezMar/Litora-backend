@@ -2,6 +2,7 @@ package com.alvarezmar.litora.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,10 +24,17 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private String description;
+    private String title;
+    private String author;
+    private String publisher;
+    private String isbn;
+    private String tags;
+    @Column(columnDefinition = "TEXT")
+    private String synopsis;
     private String imageURL;
     private double price;
+    @Column(nullable = true)
+    private Double rating;
     private int stock;
 
     @ManyToOne
