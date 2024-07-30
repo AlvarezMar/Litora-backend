@@ -2,6 +2,7 @@ package com.alvarezmar.litora.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public Optional<Book> bookById(int id) {
+    public Optional<Book> bookById(UUID id) {
         return bookRepository.findById(id);
     }
 
@@ -31,7 +32,7 @@ public class BookService {
         bookRepository.save(book);
     }
 
-    public void delete(int id) {
+    public void delete(UUID id) {
         bookRepository.deleteById(id);
     }
 }

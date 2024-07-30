@@ -1,5 +1,7 @@
 package com.alvarezmar.litora.models;
 
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
@@ -22,8 +24,8 @@ import lombok.NoArgsConstructor;
 
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String title;
     private String author;
     private String publisher;

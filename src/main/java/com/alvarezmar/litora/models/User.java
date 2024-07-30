@@ -1,6 +1,7 @@
 package com.alvarezmar.litora.models;
 
 import java.util.List;
+import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,8 +22,8 @@ import lombok.NoArgsConstructor;
 
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String name;
     private String username;
     private String mail;
